@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seran K — UI/UX Designer Portfolio</title>
+  <meta name="description" content="Portfolio of Seran K, a UI/UX designer focused on solving real logistics and marketplace problems through thoughtful, research-driven product design." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── RESET & BASE ─── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      /* Accent — a warm coral-amber that feels energetic but not loud */
+      --accent: #E8613C;
+      --accent-light: #F4A77A;
+      --accent-bg: rgba(232, 97, 60, 0.08);
+      --accent-glow: rgba(232, 97, 60, 0.15);
+
+      /* Neutrals */
+      --bg: #0D0D0D;
+      --bg-elevated: #161616;
+      --bg-card: #1A1A1A;
+      --bg-card-hover: #1F1F1F;
+      --border: rgba(255,255,255,0.06);
+      --border-hover: rgba(255,255,255,0.12);
+      --text-primary: #F0EFED;
+      --text-secondary: #9A9A9A;
+      --text-tertiary: #666666;
+
+      /* Typography */
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+
+      /* Spacing */
+      --container: 1080px;
+      --section-gap: 140px;
+      --radius: 14px;
+      --radius-sm: 8px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 150ms ease, opacity 150ms ease;
+    }
+
+    /* ─── CONTAINER ─── */
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ─── NAV ─── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 13, 13, 0.8);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+    }
+
+    .nav__inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav__logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .nav__logo span {
+      color: var(--accent);
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav__link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 0.01em;
+      position: relative;
+    }
+
+    .nav__link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+      transition: width 150ms ease;
+    }
+
+    .nav__link:hover {
+      color: var(--text-primary);
+    }
+
+    .nav__link:hover::after {
+      width: 100%;
+    }
+
+    /* ── Download CV button ──
+       TO ADD YOUR REAL CV:
+       1. Place your PDF file in the same folder as this HTML file (e.g. seran-k-cv.pdf)
+       2. Change href="#" below to href="seran-k-cv.pdf"
+       3. Add the attribute: download="Seran-K-CV.pdf"
+    */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 100px;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+      cursor: pointer;
+      transition: background 150ms ease, color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+      text-decoration: none;
+    }
+
+    .btn:hover, .btn:focus-visible {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 28px var(--accent-glow);
+      transform: translateY(-1px);
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--accent-light);
+      outline-offset: 3px;
+    }
+
+    .btn--solid {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .btn--solid:hover, .btn--solid:focus-visible {
+      background: #d4542f;
+      border-color: #d4542f;
+    }
+
+    .btn svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 120px 0 var(--section-gap);
+      position: relative;
+    }
+
+    /* Subtle ambient glow — no motion, purely atmospheric */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+      filter: blur(80px);
+    }
+
+    .hero__eyebrow {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero__eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .hero__name {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+      color: var(--text-primary);
+    }
+
+    .hero__tagline {
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .hero__intro {
+      font-size: 1.05rem;
+      color: var(--text-tertiary);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    .hero__socials {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 8px 16px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      transition: border-color 150ms ease, color 150ms ease, background 150ms ease;
+    }
+
+    .social-link:hover, .social-link:focus-visible {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-bg);
+    }
+
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    /* ─── SECTION HEADERS ─── */
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 56px;
+    }
+
+    /* ─── CASE STUDY ─── */
+    .case-study {
+      padding-bottom: var(--section-gap);
+    }
+
+    .case-study__header {
+      margin-bottom: 64px;
+    }
+
+    .case-study__meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .meta-card {
+      flex: 1;
+      min-width: 220px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: border-color 150ms ease, transform 150ms ease;
+    }
+
+    .meta-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    .meta-card__label {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .meta-card__text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* Content blocks */
+    .case-study__block {
+      margin-bottom: 56px;
+    }
+
+    .case-study__block-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .case-study__block-title::before {
+      content: '';
+      width: 4px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .case-study__block p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 720px;
+    }
+
+    .case-study__block ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .case-study__block ul li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .case-study__block ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* Deliverables grid */
+    .deliverables {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    /*
+       ── IMAGE PLACEHOLDERS ──
+       TO REPLACE WITH REAL SCREENSHOTS:
+       1. Replace the <div class="placeholder"> with an <img> tag
+       2. Example: <img src="search-filter.png" alt="Search & filter screen" />
+       3. The container styling will handle proper sizing automatically
+    */
+    .deliverable-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+    }
+
+    .deliverable-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+    }
+
+    .placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-card) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--text-tertiary);
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .placeholder svg {
+      width: 36px;
+      height: 36px;
+      opacity: 0.4;
+    }
+
+    .placeholder__label {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .deliverable-card__info {
+      padding: 18px 20px;
+    }
+
+    .deliverable-card__title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .deliverable-card__desc {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      line-height: 1.5;
+    }
+
+    /* Value statement */
+    .value-statement {
+      margin-top: 64px;
+      padding: 36px 40px;
+      background: linear-gradient(135deg, var(--accent-bg) 0%, transparent 100%);
+      border: 1px solid rgba(232, 97, 60, 0.15);
+      border-radius: var(--radius);
+      position: relative;
+    }
+
+    .value-statement::before {
+      content: '"';
+      font-family: var(--font-display);
+      font-size: 5rem;
+      color: var(--accent);
+      opacity: 0.2;
+      position: absolute;
+      top: -10px;
+      left: 24px;
+      line-height: 1;
+    }
+
+    .value-statement p {
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.7;
+      max-width: 680px;
+    }
+
+    .case-study__actions {
+      margin-top: 40px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ─── ABOUT ─── */
+    .about {
+      padding-bottom: var(--section-gap);
+    }
+
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .about__bio {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    .about__skills {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .skill-group__title {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 8px 18px;
+      border-radius: 100px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      transition: border-color 150ms ease, color 150ms ease, background 150ms ease;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-bg);
+    }
+
+    .learning-note {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: var(--text-tertiary);
+      line-height: 1.7;
+      padding-left: 16px;
+      border-left: 2px solid var(--accent);
+    }
+
+    /* ─── CONTACT ─── */
+    .contact {
+      padding-bottom: 100px;
+    }
+
+    .contact__cta {
+      margin-top: 8px;
+    }
+
+    .contact__email {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 600;
+      color: var(--text-primary);
+      padding: 16px 0;
+      border-bottom: 2px solid var(--border);
+      transition: border-color 150ms ease, color 150ms ease;
+      margin-bottom: 32px;
+    }
+
+    .contact__email:hover, .contact__email:focus-visible {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .contact__email svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .contact__socials {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 0 0 var(--section-gap);
+    }
+
+    /* ─── HAMBURGER (MOBILE) ─── */
+    .nav__toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--text-primary);
+    }
+
+    .nav__toggle svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      :root {
+        --section-gap: 80px;
+      }
+
+      .container { padding: 0 20px; }
+      .nav { padding: 0 20px; }
+
+      .nav__toggle { display: block; }
+
+      .nav__links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(13, 13, 13, 0.97);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        flex-direction: column;
+        padding: 24px 32px;
+        gap: 20px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav__links.open {
+        display: flex;
+      }
+
+      .hero { padding: 80px 0 var(--section-gap); }
+      .hero__name { margin-bottom: 16px; }
+      .hero__tagline { font-size: 1.15rem; }
+
+      .case-study__meta {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .meta-card { min-width: auto; }
+
+      .deliverables {
+        grid-template-columns: 1fr;
+      }
+
+      .about__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .value-statement {
+        padding: 28px 24px;
+      }
+    }
+
+    /* ─── FOCUS VISIBLE ─── */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent-light);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo" aria-label="Seran K — Home">Seran<span>.</span></a>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#work" class="nav__link">Work</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+        <li>
+          <!--
+            ── DOWNLOAD CV BUTTON ──
+            TO WIRE UP YOUR REAL CV:
+            1. Place your CV PDF in the same directory as this file
+            2. Change href="#" to href="your-cv-filename.pdf"
+            3. Add download="Seran-K-Resume.pdf" attribute
+          -->
+          <a href="#" id="cv-download-btn" class="btn" aria-label="Download CV (PDF)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero container" id="hero">
+    <p class="hero__eyebrow">UI/UX Designer</p>
+    <h1 class="hero__name">Seran K</h1>
+    <p class="hero__tagline">I design digital products that make complex things feel simple for the people who use them.</p>
+    <p class="hero__intro">I enjoy working on problems where real-world messiness — like logistics gaps, trust decisions, and information overload — meets a screen. My goal is to close the distance between what users actually need and what they're given.</p>
+
+    <div class="hero__socials">
+      <a href="https://www.linkedin.com/in/serankumar" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://dribbble.com/serankumar" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Dribbble profile">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308a10.174 10.174 0 0 0 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.04 6.4a10.15 10.15 0 0 0 6.29 2.166c1.42 0 2.77-.29 4.006-.816zm-11.62-2.58c.232-.4 3.045-5.055 8.332-6.765.135-.045.27-.084.405-.12-.26-.585-.54-1.167-.832-1.74C7.17 11.775 2.206 11.71 1.756 11.7l-.004.312c0 2.633.998 5.037 2.634 6.855zm-2.42-8.955c.46.008 4.683.026 9.477-1.248A81.2 81.2 0 0 0 8.12 4.37c-2.847 1.51-4.893 4.26-5.56 7.51l.41.035zM9.75 3.603c.83 1.188 2.04 3.14 3.35 5.528 3.585-1.34 5.1-3.38 5.273-3.627A10.088 10.088 0 0 0 12 2.88a10.14 10.14 0 0 0-2.25.723zm9.563 2.86c-.2.272-1.857 2.4-5.574 3.91.257.52.507 1.047.742 1.58.083.18.165.362.24.54 3.44-.432 6.865.26 7.197.33-.02-2.42-.917-4.64-2.607-6.36z"/></svg>
+        Dribbble
+      </a>
+      <a href="https://www.behance.net/serankumar" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Behance profile">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.938 4.503c.702 0 1.34.06 1.92.188.577.13 1.07.33 1.485.61.41.28.733.65.96 1.12.225.47.34 1.05.34 1.73 0 .74-.17 1.36-.507 1.86-.338.5-.837.9-1.502 1.22.906.26 1.576.72 2.022 1.37.448.66.665 1.45.665 2.36 0 .75-.13 1.39-.4 1.93-.27.55-.644 1-1.12 1.35-.48.348-1.05.6-1.67.767-.63.165-1.3.248-2.004.248H0V4.51h6.938v-.007zM6.545 10.2c.56 0 1.03-.14 1.397-.42.37-.28.554-.73.554-1.34 0-.344-.06-.625-.187-.84a1.37 1.37 0 0 0-.498-.52 2.1 2.1 0 0 0-.727-.27 4.494 4.494 0 0 0-.86-.08H3.2v3.47h3.345zm.19 5.64c.333 0 .648-.035.942-.105.29-.07.545-.19.755-.35.21-.16.375-.37.494-.63.12-.26.18-.59.18-.99 0-.78-.24-1.35-.712-1.7-.475-.35-1.096-.53-1.87-.53H3.2v4.305h3.535zm9.842-4.26c.378-.38.862-.57 1.448-.57.425 0 .79.1 1.097.3.31.2.53.44.666.72h-3.817c.24-.63.48-.96.606-1.05zm5.34 2.39a3.6 3.6 0 0 0-.15-1.06 2.78 2.78 0 0 0-.44-.94 3.64 3.64 0 0 0-.77-.78 4.27 4.27 0 0 0-1.08-.58 4.64 4.64 0 0 0-1.37-.36 6.35 6.35 0 0 0-1.49.01 5.17 5.17 0 0 0-1.4.39c-.44.18-.84.42-1.18.72-.34.3-.63.66-.86 1.08-.23.42-.4.89-.5 1.41a6.35 6.35 0 0 0-.1 1.22c0 .62.08 1.2.24 1.74.16.53.4 1 .73 1.4.33.39.74.7 1.22.93.49.22 1.05.34 1.7.34.93 0 1.7-.22 2.31-.68.6-.45 1.05-1.13 1.33-2.02h-2.37c-.08.26-.27.5-.56.69-.3.19-.65.28-1.06.28-.59 0-1.05-.16-1.38-.48-.33-.32-.52-.84-.55-1.56h6.2v-.69-.03zm-6.2-1.02c.06-.59.25-1.05.59-1.37zM15.27 4.88h5.7v1.36h-5.7V4.88z"/></svg>
+        Behance
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FEATURED CASE STUDY — Warehouse Space Sharer
+  ═══════════════════════════════════════════ -->
+  <div class="divider container"></div>
+
+  <section class="case-study container" id="work">
+
+    <div class="case-study__header">
+      <p class="section-label">Featured Case Study</p>
+      <h2 class="section-title">Warehouse Space Sharer</h2>
+      <p class="section-subtitle">A marketplace that makes it easy for small businesses across India to find — and trust — flexible, verified warehouse space nearby.</p>
+    </div>
+
+    <!-- Context cards -->
+    <div class="case-study__meta">
+      <div class="meta-card">
+        <p class="meta-card__label">Users</p>
+        <p class="meta-card__text">SMEs, D2C brands, and warehouse owners across Tier I–III Indian cities with unpredictable or seasonal storage needs.</p>
+      </div>
+      <div class="meta-card">
+        <p class="meta-card__label">Role</p>
+        <p class="meta-card__text">End-to-end product design — user research, interaction design, prototyping, and usability validation.</p>
+      </div>
+      <div class="meta-card">
+        <p class="meta-card__label">Tools</p>
+        <p class="meta-card__text">Figma, Stitch (AI design), HTML/CSS prototype, Google Slides for journey mapping.</p>
+      </div>
+    </div>
+
+    <!-- Problem -->
+    <div class="case-study__block">
+      <h3 class="case-study__block-title">The Problem</h3>
+      <p>Existing options for flexible warehousing are either rigid long-term leases or managed fulfilment providers. There's no simple, trustworthy way to list or find verified, flexible space nearby — especially outside metro markets where supply is growing but discoverability isn't.</p>
+    </div>
+
+    <!-- Research -->
+    <div class="case-study__block">
+      <h3 class="case-study__block-title">Research Grounding</h3>
+      <p>India's warehousing stock has grown rapidly in Tier II–III cities, driven by e-commerce expansion and a hub-and-spoke logistics shift. But market research showed that buyers need more than square footage to trust a listing — visibility into security, access hours, handling equipment, and insurance coverage matters before they'll even contact an owner.</p>
+    </div>
+
+    <!-- Competitive Differentiation -->
+    <div class="case-study__block">
+      <h3 class="case-study__block-title">Competitive Differentiation</h3>
+      <p>Unlike managed-fulfilment players (e.g. large on-demand warehousing networks) or pure lead-capture marketplaces, this product separates discoverability from managed fulfilment and makes operational readiness — not just size and price — comparable across listings.</p>
+    </div>
+
+    <!-- Design Decisions -->
+    <div class="case-study__block">
+      <h3 class="case-study__block-title">Design Decisions</h3>
+      <ul>
+        <li><strong>Role-based entry:</strong> "List Space" vs "Find Space" paths from the start, so each user type sees only what's relevant</li>
+        <li><strong>Requirement wizard:</strong> A short guided flow instead of forcing users to browse — the product asks what you need before showing options</li>
+        <li><strong>Comparable listing cards:</strong> Cards surface operational signals (security, equipment, certifications) alongside size and price</li>
+        <li><strong>Assisted onboarding:</strong> Supply-side users (warehouse owners) get a guided listing flow to reduce drop-off and incomplete profiles</li>
+      </ul>
+    </div>
+
+    <!-- Deliverables -->
+    <div class="case-study__block">
+      <h3 class="case-study__block-title">Key Screens & Deliverables</h3>
+
+      <div class="deliverables">
+
+        <!--
+          ── PLACEHOLDER IMAGE: Search & Filter Screen ──
+          TO REPLACE: Swap the <div class="placeholder">...</div> below with:
+          <img src="search-filter-screen.png" alt="Search and filter screen showing warehouse listings with operational readiness filters" />
+        -->
+        <div class="deliverable-card">
+          <div class="placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            <span class="placeholder__label">Search & Filter Screen</span>
+          </div>
+          <div class="deliverable-card__info">
+            <p class="deliverable-card__title">Search & Filter</p>
+            <p class="deliverable-card__desc">Warehouse discovery with operational readiness filters beyond size and price.</p>
+          </div>
+        </div>
+
+        <!--
+          ── PLACEHOLDER IMAGE: Listing Detail Card ──
+          TO REPLACE: Swap the placeholder div with:
+          <img src="listing-detail.png" alt="Detailed warehouse listing card showing security, equipment, and insurance details" />
+        -->
+        <div class="deliverable-card">
+          <div class="placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            <span class="placeholder__label">Listing Detail Card</span>
+          </div>
+          <div class="deliverable-card__info">
+            <p class="deliverable-card__title">Listing Detail</p>
+            <p class="deliverable-card__desc">Comprehensive space profile with trust signals, photos, and operational data.</p>
+          </div>
+        </div>
+
+        <!--
+          ── PLACEHOLDER IMAGE: Space Calculator ──
+          TO REPLACE: Swap the placeholder div with:
+          <img src="space-calculator.png" alt="Interactive space calculator helping users estimate warehouse requirements" />
+        -->
+        <div class="deliverable-card">
+          <div class="placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            <span class="placeholder__label">Space Calculator</span>
+          </div>
+          <div class="deliverable-card__info">
+            <p class="deliverable-card__title">Space Calculator</p>
+            <p class="deliverable-card__desc">Helps users estimate how much space they need based on inventory type and volume.</p>
+          </div>
+        </div>
+
+        <!--
+          ── PLACEHOLDER IMAGE: Owner Onboarding Flow ──
+          TO REPLACE: Swap the placeholder div with:
+          <img src="owner-onboarding.png" alt="Step-by-step owner onboarding flow for listing warehouse space" />
+        -->
+        <div class="deliverable-card">
+          <div class="placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            <span class="placeholder__label">Owner Onboarding Flow</span>
+          </div>
+          <div class="deliverable-card__info">
+            <p class="deliverable-card__title">Owner Onboarding</p>
+            <p class="deliverable-card__desc">Guided listing creation that reduces drop-off and ensures complete profiles.</p>
+          </div>
+        </div>
+
+        <!--
+          ── PLACEHOLDER IMAGE: User Journey Map ──
+          TO REPLACE: Swap the placeholder div with:
+          <img src="journey-map.png" alt="User journey map with emotional arc for warehouse discovery and booking" />
+          
+          ── DOWNLOADABLE JOURNEY MAP ASSET ──
+          If you have the PPTX journey map file, place it in the same folder and update
+          the download link in the card info below.
+        -->
+        <div class="deliverable-card">
+          <div class="placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            <span class="placeholder__label">User Journey Map</span>
+          </div>
+          <div class="deliverable-card__info">
+            <p class="deliverable-card__title">User Journey Map</p>
+            <p class="deliverable-card__desc">Emotional arc from discovery to booking. <a href="#" style="color:var(--accent); text-decoration: underline; text-underline-offset: 3px;">Download PPTX →</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Value Statement -->
+    <div class="value-statement">
+      <p>This design solves what a plain listings site doesn't: it gives searchers confidence by surfacing operational readiness alongside price, and it gives space owners a structured onboarding path that produces complete, trustworthy profiles — turning a fragmented, opaque market into a transparent, comparable one.</p>
+    </div>
+
+    <!--
+      ── VIEW PROTOTYPE LINK ──
+      Update the href below to point to your live prototype HTML file.
+      Example: href="warehouse-prototype.html" or an external URL
+    -->
+    <div class="case-study__actions">
+      <a href="#" class="btn btn--solid" aria-label="View the live Warehouse Space Sharer prototype">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        View Prototype
+      </a>
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════ -->
+  <div class="divider container"></div>
+
+  <section class="about container" id="about">
+
+    <p class="section-label">About</p>
+    <h2 class="section-title">A bit about me</h2>
+
+    <div class="about__grid">
+      <div>
+        <p class="about__bio">
+          I'm an Electronics and Communication Engineering student in Coimbatore, transitioning into UI/UX design. I got here because I kept noticing that the products I used every day could be better — and I wanted to be the one figuring out how.
+          <br/><br/>
+          I'm drawn to real-world, messy problems — logistics, marketplaces, spaces where clear design can remove friction for people who don't have time to figure things out. I'm early in this journey, learning in public, and shipping work to get better.
+        </p>
+      </div>
+      <div class="about__skills">
+        <div class="skill-group">
+          <p class="skill-group__title">Tools I Use</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Stitch (AI)</span>
+            <span class="skill-tag">HTML / CSS</span>
+            <span class="skill-tag">Google Slides</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group__title">Areas of Interest</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Product Design</span>
+            <span class="skill-tag">User Research</span>
+            <span class="skill-tag">Interaction Design</span>
+            <span class="skill-tag">Prototyping</span>
+          </div>
+        </div>
+        <div>
+          <p class="skill-group__title">Currently Learning</p>
+          <p class="learning-note">
+            Deepening my Figma skills — component systems, auto-layout, and interactive prototyping. Also exploring how AI design tools can speed up the ideation-to-prototype loop without sacrificing design intent.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════ -->
+  <div class="divider container"></div>
+
+  <section class="contact container" id="contact">
+
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Let's work together</h2>
+    <p class="section-subtitle">I'm open to freelance projects, internships, and collaborations. If you have an interesting problem, I'd love to hear about it.</p>
+
+    <div class="contact__cta">
+      <a href="mailto:serank2502@gmail.com" class="contact__email" aria-label="Send email to serank2502@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        serank2502@gmail.com
+      </a>
+    </div>
+
+    <div class="contact__socials">
+      <a href="https://www.linkedin.com/in/serankumar" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://dribbble.com/serankumar" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Dribbble profile">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308a10.174 10.174 0 0 0 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.04 6.4a10.15 10.15 0 0 0 6.29 2.166c1.42 0 2.77-.29 4.006-.816zm-11.62-2.58c.232-.4 3.045-5.055 8.332-6.765.135-.045.27-.084.405-.12-.26-.585-.54-1.167-.832-1.74C7.17 11.775 2.206 11.71 1.756 11.7l-.004.312c0 2.633.998 5.037 2.634 6.855zm-2.42-8.955c.46.008 4.683.026 9.477-1.248A81.2 81.2 0 0 0 8.12 4.37c-2.847 1.51-4.893 4.26-5.56 7.51l.41.035zM9.75 3.603c.83 1.188 2.04 3.14 3.35 5.528 3.585-1.34 5.1-3.38 5.273-3.627A10.088 10.088 0 0 0 12 2.88a10.14 10.14 0 0 0-2.25.723zm9.563 2.86c-.2.272-1.857 2.4-5.574 3.91.257.52.507 1.047.742 1.58.083.18.165.362.24.54 3.44-.432 6.865.26 7.197.33-.02-2.42-.917-4.64-2.607-6.36z"/></svg>
+        Dribbble
+      </a>
+      <a href="https://www.behance.net/serankumar" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Behance profile">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.938 4.503c.702 0 1.34.06 1.92.188.577.13 1.07.33 1.485.61.41.28.733.65.96 1.12.225.47.34 1.05.34 1.73 0 .74-.17 1.36-.507 1.86-.338.5-.837.9-1.502 1.22.906.26 1.576.72 2.022 1.37.448.66.665 1.45.665 2.36 0 .75-.13 1.39-.4 1.93-.27.55-.644 1-1.12 1.35-.48.348-1.05.6-1.67.767-.63.165-1.3.248-2.004.248H0V4.51h6.938v-.007zM6.545 10.2c.56 0 1.03-.14 1.397-.42.37-.28.554-.73.554-1.34 0-.344-.06-.625-.187-.84a1.37 1.37 0 0 0-.498-.52 2.1 2.1 0 0 0-.727-.27 4.494 4.494 0 0 0-.86-.08H3.2v3.47h3.345zm.19 5.64c.333 0 .648-.035.942-.105.29-.07.545-.19.755-.35.21-.16.375-.37.494-.63.12-.26.18-.59.18-.99 0-.78-.24-1.35-.712-1.7-.475-.35-1.096-.53-1.87-.53H3.2v4.305h3.535zm9.842-4.26c.378-.38.862-.57 1.448-.57.425 0 .79.1 1.097.3.31.2.53.44.666.72h-3.817c.24-.63.48-.96.606-1.05zm5.34 2.39a3.6 3.6 0 0 0-.15-1.06 2.78 2.78 0 0 0-.44-.94 3.64 3.64 0 0 0-.77-.78 4.27 4.27 0 0 0-1.08-.58 4.64 4.64 0 0 0-1.37-.36 6.35 6.35 0 0 0-1.49.01 5.17 5.17 0 0 0-1.4.39c-.44.18-.84.42-1.18.72-.34.3-.63.66-.86 1.08-.23.42-.4.89-.5 1.41a6.35 6.35 0 0 0-.1 1.22c0 .62.08 1.2.24 1.74.16.53.4 1 .73 1.4.33.39.74.7 1.22.93.49.22 1.05.34 1.7.34.93 0 1.7-.22 2.31-.68.6-.45 1.05-1.13 1.33-2.02h-2.37c-.08.26-.27.5-.56.69-.3.19-.65.28-1.06.28-.59 0-1.05-.16-1.38-.48-.33-.32-.52-.84-.55-1.56h6.2v-.69-.03zm-6.2-1.02c.06-.59.25-1.05.59-1.37zM15.27 4.88h5.7v1.36h-5.7V4.88z"/></svg>
+        Behance
+      </a>
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer container">
+    <p>© 2026 Seran K. Designed & built by hand.</p>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       INLINE JAVASCRIPT
+  ═══════════════════════════════════════════ -->
+  <script>
+    // ── Mobile nav toggle ──
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close mobile nav when a link is clicked
+    links.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── Smooth scroll offset for sticky nav ──
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          const navHeight = document.querySelector('.nav').offsetHeight;
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 24;
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
