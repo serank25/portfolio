@@ -7,77 +7,59 @@
   <title>Seran K — UI/UX Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
   <header class="site-header">
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="Seran K home">Seran<span>.</span></a>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-links" id="nav-links">
-        <a href="#work">Work</a>
-        <a href="#process">Process</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a class="button button-small" href="Seran_K_Resume.pdf" download="Seran_K_Resume.pdf">Download CV <span aria-hidden="true">↓</span></a>
-      </div>
+    <a class="brand" href="#top" aria-label="Seran K home"><span>Seran</span> K.</a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+      <a href="#top">Home</a><a href="#services">What I do</a><a href="#work">Projects</a><a href="#contact">Contact</a>
+      <a class="button button-small" href="Seran_K_Resume.pdf" download="Seran_K_Resume.pdf">Download CV <span>↗</span></a>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero container" aria-labelledby="hero-title">
       <div class="hero-copy reveal">
-        <p class="eyebrow"><span></span> UI/UX designer</p>
-        <h1 id="hero-title">Seran K</h1>
-        <p class="hero-lede">I design digital products that make complex things feel simple for the people who use them.</p>
-        <p class="hero-body">I enjoy working where real-world messiness — logistics gaps, trust decisions, and information overload — meets a screen. My goal is to close the distance between what a product can do and what people can understand.</p>
-        <div class="hero-actions">
-          <a class="button" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
-          <a class="text-link" href="mailto:serank2502@gmail.com">Let's talk <span aria-hidden="true">↗</span></a>
-        </div>
+        <p class="availability"><i></i> Available immediately · Open to relocation</p>
+        <h1 id="hero-title">Designing &amp;<br />developing<br /><em>thoughtful digital</em><br />experiences.</h1>
+        <p class="hero-body">I design digital products that make complex things feel simple for the people who use them. I move from user research and messy product realities to clear, confident interfaces.</p>
+        <div class="hero-actions"><a class="button" href="Seran_K_Resume.pdf" download="Seran_K_Resume.pdf">Download CV <span>↗</span></a><a class="button button-dark" href="#services">Read more <span>↓</span></a></div>
+        <div class="social-links"><a href="mailto:serank2502@gmail.com">Email</a><a href="https://www.linkedin.com/in/serankumar" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="#contact">Contact</a></div>
       </div>
-      <div class="hero-art reveal" aria-label="Abstract illustration of connected product screens" role="img">
-        <div class="orb orb-one"></div><div class="orb orb-two"></div>
-        <div class="art-grid"></div>
-        <div class="floating-card card-back"><span class="mini-label">SPACE SHARER</span><strong>Find the right<br />space, faster.</strong><div class="mini-lines"><i></i><i></i><i></i></div></div>
-        <div class="floating-card card-front"><div class="card-top"><span class="status-dot"></span><span>Verified space</span><b>⋯</b></div><div class="warehouse-illustration"><span class="warehouse-roof"></span><span class="warehouse-body"></span><span class="warehouse-door"></span></div><div class="card-bottom"><strong>Mahadev Logistics</strong><span>2,400 sq ft · Bengaluru</span></div></div>
-        <div class="art-caption">From ambiguity<br />to action.</div>
+      <div class="hero-visual reveal" aria-label="Abstract product design composition" role="img">
+        <div class="visual-glow"></div><div class="visual-ring ring-one"></div><div class="visual-ring ring-two"></div>
+        <div class="profile-panel"><span class="panel-kicker">SERAN K / 2026</span><strong>From ambiguity<br /><em>to action.</em></strong><div class="panel-lines"><i></i><i></i><i></i></div><span class="panel-note">Product design<br />UI/UX · Research · Systems</span></div>
+        <div class="visual-card card-one"><span>01</span><strong>Understand</strong><small>Listen before designing.</small></div>
+        <div class="visual-card card-two"><span>02</span><strong>Shape</strong><small>Make the complex clear.</small></div>
       </div>
     </section>
 
-    <section class="case-study container section" id="work" aria-labelledby="work-title">
-      <div class="section-heading reveal"><p class="eyebrow"><span></span> Featured case study</p><h2 id="work-title">Warehouse<br /><em>Space Sharer</em></h2><p>A marketplace that makes it easy for small businesses across India to find — and trust — flexible, verified warehouse space nearby.</p></div>
-      <div class="project-meta reveal">
-        <article><span>Users</span><p>SMEs, D2C brands, and warehouse owners across Tier I–III Indian cities.</p></article>
-        <article><span>Role</span><p>End-to-end product design — research, interaction design, prototyping, and validation.</p></article>
-        <article><span>Tools</span><p>Figma and Google Stitch.</p></article>
+    <section class="intro-band container reveal"><span>01 / Selected focus</span><p>Thoughtful products begin with curiosity, then become clear through design.</p></section>
+
+    <section class="services container section" id="services" aria-labelledby="services-title">
+      <div class="section-heading reveal"><p class="eyebrow">What I do.</p><h2 id="services-title">Design with<br /><em>purpose.</em></h2><p>From first question to final interface, I create useful systems that feel calm, intuitive, and human.</p></div>
+      <div class="service-list">
+        <article class="service-row reveal"><span>01</span><div><h3>UX Design</h3><p>User research, information architecture, user flows, wireframing, prototyping, and usability testing.</p></div><b>↗</b></article>
+        <article class="service-row reveal"><span>02</span><div><h3>UI Design</h3><p>High-fidelity interfaces, interaction design, responsive layouts, and visual systems that scale.</p></div><b>↗</b></article>
+        <article class="service-row reveal"><span>03</span><div><h3>Product Thinking</h3><p>End-to-end product design that turns operational complexity into confident user decisions.</p></div><b>↗</b></article>
+        <article class="service-row reveal"><span>04</span><div><h3>Visual Systems</h3><p>Brand direction, component thinking, and polished details that make a product feel considered.</p></div><b>↗</b></article>
       </div>
-      <div class="case-content">
-        <div class="case-narrative reveal">
-          <article><h3><b>01</b> The problem</h3><p>Flexible warehousing sits between two imperfect choices: rigid long-term leases and managed fulfilment providers. There was no simple, trustworthy way to list or find verified space when a business needed it.</p></article>
-          <article><h3><b>02</b> Research grounding</h3><p>Buyers wanted more than a square-footage number. They needed confidence about security, access, equipment, insurance, and the people behind each listing before making contact.</p></article>
-          <article><h3><b>03</b> The opportunity</h3><p>Make operational readiness visible at the moment of discovery, while giving space owners an assisted path to publish complete, comparable listings.</p></article>
-        </div>
-        <aside class="insight-card reveal"><span class="quote-mark">“</span><p>Trust is not a separate step in the warehouse journey. It is the product experience.</p><span class="insight-rule"></span><small>Core product principle</small></aside>
-      </div>
-      <div class="decisions reveal"><div><p class="eyebrow"><span></span> Design decisions</p><h3>Every screen earns<br />its place.</h3></div><ul><li><strong>Role-based entry</strong><span>“List Space” and “Find Space” paths make the first decision feel obvious.</span></li><li><strong>Requirement wizard</strong><span>A guided flow asks what users need before asking them to browse.</span></li><li><strong>Comparable cards</strong><span>Operational signals sit beside size and price, not behind another click.</span></li><li><strong>Assisted onboarding</strong><span>Owners get a structured listing flow that reduces drop-off and incomplete profiles.</span></li></ul></div>
-      <div class="deliverables reveal"><div class="deliverable-intro"><p class="eyebrow"><span></span> Key screens</p><h3>A system for<br />confident choices.</h3><p>From first search to first conversation, each touchpoint reduces uncertainty.</p></div><div class="screen-grid"><article class="screen-card screen-search"><div class="mock-window"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-search">⌕ <span>Search near Bengaluru</span></div><div class="mock-filter"><span>2,400+ sq ft</span><span>Verified</span><span>Loading access</span></div><div class="mock-list"><i></i><div><b>Mahadev Logistics</b><small>2,400 sq ft · ₹18 / sq ft</small></div><em>98%</em></div><div class="mock-list faded"><i></i><div><b>North Star Storage</b><small>3,100 sq ft · ₹22 / sq ft</small></div><em>94%</em></div></div><h4>Search & filter</h4><p>Discovery with operational readiness filters.</p></article><article class="screen-card screen-detail"><div class="mock-window"><div class="mock-image"><span>WAREHOUSE</span></div><div class="detail-copy"><b>Mahadev Logistics</b><small>Yeshwanthpur · Bengaluru</small><div class="detail-pills"><span>✓ Verified</span><span>24/7 access</span></div><div class="detail-price">₹43,200 <small>/ month</small></div></div></div><h4>Listing detail</h4><p>Trust signals, photos, and operational data in one view.</p></article><article class="screen-card screen-prototype"><div class="mock-window prototype-window"><span>WHY SPACE</span><strong>Explore the<br />prototype.</strong><p>See the complete journey from search to space request.</p><a class="prototype-link" href="https://www.figma.com/proto/t6pKWiB239mQkBvoRTiPBe/Why-Space?node-id=58-15&starting-point-node-id=58%3A15&t=9b45kdATk45tirfG-1" target="_blank" rel="noopener noreferrer">View prototype <span aria-hidden="true">↗</span></a></div><h4>Interactive prototype</h4><p>Walk through the complete Why Space experience.</p></article></div></div>
-      <div class="case-footer reveal"><p>This design solves what a plain listings site doesn't: it gives searchers confidence by surfacing operational readiness alongside price, and gives space owners a structured way to be found.</p><a class="button button-outline" href="#contact">Discuss a project <span aria-hidden="true">↗</span></a></div>
+      <div class="marquee" aria-label="Design capabilities"><span>Research</span><i>✦</i><span>Wireframing</span><i>✦</i><span>Prototyping</span><i>✦</i><span>Responsive UI</span><i>✦</i><span>Design Systems</span><i>✦</i></div>
     </section>
 
-    <section class="process container section" id="process" aria-labelledby="process-title"><div class="section-heading reveal"><p class="eyebrow"><span></span> How I work</p><h2 id="process-title">Curious first.<br /><em>Clear by design.</em></h2><p>I move between the messy reality of a problem and the calm simplicity of a finished interface.</p></div><div class="process-grid"><article class="process-step reveal"><span>01</span><h3>Understand</h3><p>Listen to users, map the context, and find the friction behind the brief.</p></article><article class="process-step reveal"><span>02</span><h3>Shape</h3><p>Turn patterns into a clear product direction through flows, structures, and prototypes.</p></article><article class="process-step reveal"><span>03</span><h3>Validate</h3><p>Test early, learn quickly, and make the final experience feel inevitable.</p></article></div></section>
+    <section class="work container section" id="work" aria-labelledby="work-title">
+      <div class="section-heading work-heading reveal"><p class="eyebrow">Portfolio / Projects</p><h2 id="work-title">Selected<br /><em>work.</em></h2><p>A closer look at the decisions behind a product experience designed for trust.</p></div>
+      <article class="featured-project reveal"><div class="project-visual"><div class="project-window"><div class="window-top"><span></span><span></span><span></span><small>SPACE SHARER</small></div><div class="project-copy"><small>FIND VERIFIED SPACE</small><strong>Warehouse<br /><em>Space Sharer</em></strong><p>Operational readiness, surfaced at the moment of discovery.</p></div><div class="project-stat"><b>98%</b><span>confidence signal</span></div></div></div><div class="project-info"><p class="project-index">01 / Featured case study</p><h3>Warehouse<br /><em>Space Sharer</em></h3><p>A marketplace that helps small businesses across India find — and trust — flexible, verified warehouse space nearby.</p><div class="tag-list"><span>Product design</span><span>UX research</span><span>Figma</span></div><a class="text-link" href="https://www.figma.com/proto/t6pKWiB239mQkBvoRTiPBe/Why-Space?node-id=58-15&starting-point-node-id=58%3A15&t=9b45kdATk45tirfG-1" target="_blank" rel="noopener noreferrer">View prototype <b>↗</b></a></div></article>
+    </section>
 
-    <section class="about container section" id="about" aria-labelledby="about-title"><div class="about-grid"><div class="section-heading reveal"><p class="eyebrow"><span></span> About Seran</p><h2 id="about-title">The person<br /><em>behind the pixels.</em></h2><div class="availability"><span class="availability-dot"></span> Available immediately · Open to relocation</div></div><div class="about-copy reveal"><p>I’m Seran, a fresher UI/UX designer with a strong foundation in user research, information architecture, user flows, wireframing, and high-fidelity prototyping in Figma.</p><p>I translate user needs into clear, intuitive interfaces through a structured, research-driven process — with a particular interest in products that make everyday work simpler.</p><div class="education-card"><span>Education</span><strong>Bachelor of Engineering</strong><p>Muthayammal Engineering College, Rasipuram<br />2022 — 2026</p></div><div class="skill-groups"><div><span>Design skills</span><p>UI/UX design · User journeys · Information architecture · Personas · Wireframing · Prototyping · Interaction design · Usability testing · Responsive web design</p></div><div><span>Tools</span><div class="tool-logos"><div class="tool-logo"><img src="assets/figma-logo.jpg" alt="Figma logo" /><span>Figma</span></div><div class="tool-logo tool-logo-text"><span class="tool-mark" aria-hidden="true">FM</span><span>Figma Make</span></div><div class="tool-logo"><img src="assets/stitch-logo.jpg" alt="Google Stitch logo" /><span>Google Stitch</span></div></div></div></div></div></div></section>
+    <section class="about container section" id="about" aria-labelledby="about-title"><div class="about-grid"><div class="section-heading reveal"><p class="eyebrow">A little about me.</p><h2 id="about-title">The person<br /><em>behind the pixels.</em></h2></div><div class="about-copy reveal"><p>I’m Seran, a fresher UI/UX designer with a strong foundation in user research, information architecture, user flows, wireframing, and high-fidelity prototyping in Figma.</p><div class="about-meta"><div><span>Education</span><strong>Bachelor of Engineering</strong><small>Muthayammal Engineering College<br />2022 — 2026</small></div><div><span>Tools</span><strong>Figma · Figma Make<br />Google Stitch</strong><small>Open to junior UI/UX opportunities and thoughtful product problems.</small></div></div></div></div></section>
 
-    <section class="contact container section" id="contact" aria-labelledby="contact-title"><div class="contact-layout"><div class="contact-panel reveal"><p class="eyebrow"><span></span> Let’s connect</p><h2 id="contact-title">Let’s make it<br /><em>feel simple.</em></h2><p>Open to junior UI/UX design opportunities, collaborations, and thoughtful product problems.</p><a class="contact-email" href="mailto:serank2502@gmail.com">serank2502@gmail.com <span aria-hidden="true">↗</span></a></div><div class="contact-details reveal"><a class="contact-card" href="mailto:serank2502@gmail.com"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><span><small>Email</small><strong>serank2502@gmail.com</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a><a class="contact-card" href="tel:+918838630838"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7.5 3.5h3l1.5 4-2 1.5a14 14 0 0 0 5 5l1.5-2 4 1.5v3c0 1.1-.9 2-2 2C11.6 18.5 5.5 12.4 5.5 5.5c0-1.1.9-2 2-2Z"/></svg></span><span><small>Mobile</small><strong>+91 88386 30838</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a><a class="contact-card" href="https://www.linkedin.com/in/serankumar" target="_blank" rel="noopener noreferrer"><span class="contact-icon contact-brand" aria-hidden="true"><img src="assets/linkedin-logo.jpg" alt="LinkedIn logo" /></span><span><small>LinkedIn</small><strong>linkedin.com/in/serankumar</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a></div></div></section>
+    <section class="contact container section" id="contact" aria-labelledby="contact-title"><div class="contact-panel reveal"><p class="eyebrow">Let's connect.</p><h2 id="contact-title">Have a project<br /><em>in mind?</em></h2><p>Open to collaborations, junior UI/UX roles, and products that make everyday work simpler.</p><div class="contact-links"><a href="mailto:serank2502@gmail.com">serank2502@gmail.com <span>↗</span></a><a href="https://www.linkedin.com/in/serankumar" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a></div></div></section>
   </main>
-
-  <footer class="footer"><div class="container"><span>© <span id="year"></span> Seran K</span><span>Designed with intention.</span><div><a href="mailto:serank2502@gmail.com">Email</a><a href="tel:+918838630838">Call</a><a href="https://www.linkedin.com/in/serankumar" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></div></footer>
-  <noscript><div class="noscript-note">This portfolio is best experienced with JavaScript enabled.</div></noscript>
-  <div class="toast" role="status" aria-live="polite"></div>
+  <footer class="footer"><div class="container"><span>© <span id="year"></span> Seran K</span><span>Designed with intention.</span><a href="#top">Back to top ↑</a></div></footer>
 </body>
 </html>
